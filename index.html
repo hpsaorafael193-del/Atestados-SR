@@ -173,9 +173,8 @@
 
     function formatDateBR(iso) {
       if (!iso) return '--/--/----';
-      const d = new Date(iso);
-      if (Number.isNaN(d)) return '--/--/----';
-      return String(d.getDate()).padStart(2,'0') + '/' + String(d.getMonth()+1).padStart(2,'0') + '/' + d.getFullYear();
+      const [year, month, day] = iso.split('-');
+      return `${day}/${month}/${year}`;
     }
 
     function updatePreview() {
